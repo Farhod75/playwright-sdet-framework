@@ -1,0 +1,30 @@
+{
+  "name": "playwright-sdet-framework",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "playwright test",
+    "test:ui": "playwright test --project=chromium tests/ui",
+    "test:api": "playwright test --project=api",
+    "test:headed": "playwright test --headed --project=chromium",
+    "test:debug": "playwright test --debug",
+    "test:uimode": "playwright test --ui",
+    "test:chrome": "playwright test --project=chromium",
+    "test:all-browsers": "playwright test --project=chromium --project=firefox --project=webkit",
+    "test:smoke": "playwright test --grep @smoke",
+    "test:regression": "playwright test --grep @regression",
+    "report": "playwright show-report",
+    "codegen": "playwright codegen",
+    "trace": "playwright show-trace"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@playwright/test": "^1.62.1",
+    "@types/node": "^26.1.2",
+    "dotenv": "^17.4.2",
+    "zod": "^4.4.3"
+  }
+}
