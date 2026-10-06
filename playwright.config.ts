@@ -1,6 +1,12 @@
 import { defineConfig, devices } from '@playwright/test';
 import * as dotenv from 'dotenv';
 import * as path from 'path';
+import { defineBddConfig } from 'playwright-bdd';
+
+const bddTestDir = defineBddConfig({
+  features: 'features/**/*.feature',
+  steps: ['features/steps/**/*.ts', 'fixtures/pages.fixture.ts'],
+});
 
 // Load environment variables from .env file
 // This keeps secrets (passwords, API keys, DB connection strings) OUT of Git
@@ -103,7 +109,15 @@ export default defineConfig({
     },
     dependencies: ['setup'],
   },
-
+  
+  {
+  name: 'bdd',
+  testDir: bddTestDir,
+  use: {
+    ...devices['Desktop Chrome'],
+    storageState: undefined,
+  },
+},
   // ── API: no browser needed ─────────────────────────────
   {
   name: 'api',

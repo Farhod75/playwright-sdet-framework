@@ -13,6 +13,8 @@
     "test:all-browsers": "playwright test --project=chromium --project=firefox --project=webkit",
     "test:smoke": "playwright test --grep @smoke",
     "test:regression": "playwright test --grep @regression",
+    "test:bdd": "bddgen && playwright test --project=bdd",
+    "bdd:gen": "bddgen",
     "report": "playwright show-report",
     "codegen": "playwright codegen",
     "trace": "playwright show-trace"
@@ -22,9 +24,11 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "@cucumber/cucumber": "^13.3.0",
     "@playwright/test": "^1.62.1",
     "@types/node": "^26.1.2",
     "dotenv": "^17.4.2",
+    "playwright-bdd": "^9.2.1",
     "zod": "^4.4.3"
   }
 }

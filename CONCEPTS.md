@@ -368,3 +368,11 @@ Answer out loud:
 In async ({ page, request }), how many things did you ask for out of the box?
 Is the { } in page.screenshot({ path: 'x.png' }) packing or unpacking?
 2 page, request. 2. packing
+
+PAGE OBJECT CHECKLIST
+1. import { Page, Locator } from '@playwright/test'
+2. export class XPage extends BasePage
+3. readonly locators declared
+4. constructor(page: Page) { super(page); ...assign locators }
+5. action methods (async, await, Promise<void>)
+6. query methods (return data)
